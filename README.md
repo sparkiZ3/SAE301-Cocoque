@@ -1,6 +1,6 @@
 # Cocoque
 
-Cocoque® est une plateforme d'e-commerce spécialisée dans la vente de coques de téléphones.
+Cocoque® est une plateforme d'e-commerce spécialisée dans la vente de coques de téléphones développé en php avec symfony.
 
 # Les livrables :
 
