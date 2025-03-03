@@ -1,10 +1,10 @@
 # Cocoque
 
-Cocoque® est une plateforme de e-commerce spécialisé dans la vente de coques de téléphones.
+Cocoque® est une plateforme d'e-commerce spécialisée dans la vente de coques de téléphones.
 
 # Les livrables :
 
-Vous trouverez tous les documents/livrables destinés à chaque Ressource 
+Vous trouverez tous les documents/livrables destinés à chaque ressource 
 
 | Ressource | Nom | fichier | Date rendu |
 | :---         | :---:    |:---:    | ---:          |
@@ -24,26 +24,28 @@ Vous trouverez tous les documents/livrables destinés à chaque Ressource
 
 # Les designs
 
-vous trouverez dans le dossier ` website/HTML&CSS_design/` les designs utilisés pour ce projets avant de les implémenter dans le twig
+Vous trouverez dans le dossier ` website/HTML&CSS_design/` les designs utilisés pour ce projet avant de les implémenter dans le twig
 
 # Le site
 
-vous pouvez acceder au site via l'url suivante :
-- Via le reseau de l'IUT en http -> http://172.12.44:8000
-- Via le VPN en http -> http://172.12.44
-- Via le VPN en https -> https://172.12.44:80
+Vous pouvez accéder au site via l'URL suivante :
+- Via le réseau de l'IUT en HTTP -> http://172.12.44:8000
+- Via le VPN en HTTP -> http://172.12.44
+- Via le VPN en HTTPS -> https://172.12.44:80
+
+*les urls sont différentes car le vpn n'accepte que les connexions depuis les ports : 22(ssh) ,80(HTTP) et 443(HTTPS)*
 
 ## La page principale (/)
 
-Sur la page principale, vous trouverez les éléments principaux de la marque : Nos produits phares ainsi que nos collection
+Sur la page principale, vous trouverez les éléments principaux de la marque : Nos produits phares ainsi que nos collections
 
 ## La page panier (/cart)
 
-Sur cette page, vous trouver les articles que vous avez ajouté dans votre panier. Via cette page vous avez la possibilité de valider votre panier et donc ce passer au paiement
+Sur cette page, vous trouverez les articles que vous avez ajoutés dans votre panier. Via cette page, vous avez la possibilité de valider votre panier et donc de passer au paiement
 
 ## La page compte (/account)
 
-Sur cette page, il est possible de visualiser nos informations personelles (informations sur le compte et informations sur les adresses de livraisons). Il est aussi possible de modifier ces informations via le petit bouton avec un crayon en bas a droite de l'écran
+Sur cette page, il est possible de visualiser nos informations personnelles (informations sur le compte et informations sur les adresses de livraisons). Il est aussi possible de modifier ces informations via le petit bouton avec un crayon en bas à droite de l'écran
 
 ## La page products (/products)
 
@@ -51,7 +53,7 @@ Sur cette page, vous trouverez toutes nos coques disponibles. Vous y trouverez a
 
 ## La page product (/product)
 
-Sur cette page, vous trouverez toutes les informations concernant un produit : son nom, sa description, son prix. Il est également de mettre dans son panier ce produits en différentes quantités (en fonction des stocks restant evidemment). Il y a aussi un petit message dans le cas ou les stock est inferieur a 10 produits ou que le stock est vide. Vous pouvez aussi acceder aux produits de la meme collections
+Sur cette page, vous trouverez toutes les informations concernant un produit : son nom, sa description, son prix. Il est également possible de mettre dans son panier ce produit en différentes quantités (en fonction des stocks restants, évidemment). Il y a aussi un petit message dans le cas où le stock est inférieur à 10 produits ou que le stock est vide. Vous pouvez aussi accéder aux produits de la même collection
 
 ## La page collection (/collection)
 
@@ -59,10 +61,4 @@ Sur cette page, vous trouverez toutes les collections disponibles sur notre site
 
 ## La page admin (/admin)
 
-Sur cette page réservé aux personnes possedant le role 'ROLE_ADMIN', il est possible de monitorer certaines valeurs et de gerer les user(suppression, modif), les produits (ajouts), promotions (création) et collection (création)
-
-Compte Prof (admin) :
-
-> Mail: prof@cocoque.fr
-
-> Password: `#cocoqueProf#`
+Sur cette page réservé aux personnes possédant le rôle 'ROLE_ADMIN', il est possible de monitorer certaines valeurs et de gérer les user (suppression, modif), les produits (ajouts), les promotions (création) et les collections (création).
