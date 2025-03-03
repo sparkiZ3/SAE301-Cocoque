@@ -1,0 +1,184 @@
+.collectionContainer{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    color: #3F3F3F;
+}
+
+.leftMenuContainer{
+    width: 30%;
+}
+.lefMenu{
+    background-color: #fff;
+    padding: 20px;
+    margin: 0 20px;
+    border-radius: 10px;
+}
+
+label {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+select {
+width: 100%;
+max-width: 300px;
+padding: 10px 15px;
+font-size: 16px;
+font-family: Arial, sans-serif;
+color: #444;
+background-color: #f0f0f0;
+border: 2px solid #a09d9d;
+border-radius: 5px;
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+select:hover {
+border-color: #9c9c9c;
+background-color: #e8e8e8;  
+}
+
+optgroup {
+text-decoration: none;
+font-weight: bold;
+color: #555;
+}
+
+option {
+padding: 5px 10px;
+}
+.searchBar{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+}
+form button{
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #D7D7D7;
+    background-color: #fff;
+    border-radius: 5px 0 0 5px;
+}
+
+form button svg{
+    height: calc(100% - 15px);
+    fill: #424242;
+}
+.searchBar input[type=text]{
+    height: 100%;
+    border-radius: 0;
+    border: 1px solid #D7D7D7;
+    padding: 10px;
+    margin: 0;
+    border-radius: 0 5px 5px 0;
+    width: 100%;
+}
+
+.rightContentContainer{
+    width: 70%;
+    padding-right:20px;
+    margin: 0 20px;
+}
+
+
+.cardContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 20px;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.phoneCard{
+    border-radius: 10px;
+    width: 20%;
+    background-color: #F8F8F8;
+    padding: 20px;
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.phoneCard .comment{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    top: 0;
+    left: 0 ;
+    padding: 5px;
+    background-color: #F95B5B   ;
+    border-radius: 10px 0 5px 0 ;
+    color: #fff;
+}
+.phoneCard p{
+    color: #999999;
+}
+.comment p {
+    padding: 0;
+    margin: 0;
+    border-radius: 0 0 5px 0 ;
+    color: #fff;
+    font-weight: bold;
+    margin: 3px;
+}
+.comment svg{
+    margin:  0 7px;
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+}
+.phoneCard h2{
+    margin: 0;
+    font-weight: bold;
+}
+.phoneCard p{
+    margin: 0;
+}
+.phoneCard img{
+    width: 100%;
+}
+.phoneCard .buttons{
+    display: flex;
+    flex-direction: row;
+}
+.phoneCard .buttons button{
+    font-weight: bold;
+}
+.phoneCard button svg{
+    fill: #fff;
+    width: 20px;
+    height: 20px;
+}
+.phoneCard .buttons .seeProd{
+    width: 100%;
+    margin-right: 10px;
+
+}
+
+.phoneCard button{
+    background-color: var(--secondary-color);
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+.phoneCard :nth-child(1){
+    color: #fff;
+}

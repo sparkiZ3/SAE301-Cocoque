@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  
+  .formContainerRegister {
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Conteneur du formulaire */
+  .formContainerRegister form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+  }
+  .formContainerRegister form div{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Titre du formulaire */
+  .formContainerRegister h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Message d'erreur */
+  .formContainerRegister .alert {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  /* Champs de saisie */
+  .formContainerRegister label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  
+  .formContainerRegister input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .formContainerRegister input:focus {
+    border-color: #6399FF;
+    outline: none;
+  }
+  
+  /* Case à cocher */
+  .formContainerRegister .checkbox {
+    margin-bottom: 20px;
+  }
+  
+  .formContainerRegister .checkbox label {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .formContainerRegister .checkbox input {
+    margin-right: 5px;
+  }
+  
+  /* submit Button  */
+  .formContainerRegister .btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #6399FF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .formContainerRegister .btn:hover {
+    background-color: #6399FF;
+  }
+  .formContainerRegister form div div{
+    flex-direction: row-reverse;
+    justify-content: start;
+  }
+  .formContainerRegister form div div input{
+    width: fit-content;
+    margin-right: 10px;
+    margin-top: 1.5px;
+  }
+  
+  /* Liens */
+  .formContainerRegister a {
+    margin-top: 10px;
+    text-align: center;
+
+    color: #6399FF;
+    text-decoration: none;
+  }
+
+  .formContainerRegister .formContainer ul{
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    font-size: 1rem;
+  }
+
+  .formContainerRegister div ul {
+    list-style: none;
+    color: #721c24;
+    font-size: 12px;
+  }

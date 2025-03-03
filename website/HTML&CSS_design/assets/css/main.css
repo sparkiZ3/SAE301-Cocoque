@@ -1,0 +1,14 @@
+:root{
+    --bs-body-bg:#f4f4f4;
+    --primary-color:#fff;
+    --secondary-color:#6399FF;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}

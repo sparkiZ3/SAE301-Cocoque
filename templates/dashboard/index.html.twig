@@ -1,0 +1,157 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Panel Admin{% endblock %}
+
+
+{% block stylesheets%}
+<link href="{{ asset('css/dashboard.css') }} " rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <div class="contentContainer">
+        <h1>Overview</h1>
+        <div class="fullWidthContainer">
+            <div class="row">
+                <div class="infoContainer" style="background-color: #008CFF;">
+                    <p>Commandes</p>
+                    <h2>{{ overviewValues[0] }}</h2>
+                </div>
+                <div class="infoContainer" style="background-color: #FFBB00;">
+                    <p>Users</p>
+                    <h2>{{ overviewValues[1] }}</h2>
+                </div>
+                <div class="infoContainer" style="background-color: #2AD100;">
+                    <p>Articles</p>
+                    <h2>{{ overviewValues[2] }}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="rowContainer">
+            <div class="userManager">
+                <h1>Users</h1>
+                <div class="userMenu">
+                    <form class="searchBar" action="/admin" method="post" data-turbo="false">
+                        <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></button>
+                        <input type="text" name="searchUser" placeholder="Rechercher un user">
+                    </form>
+                    <div class="userContainer">
+                        {% for user in users %}
+                        <div class="userCard">
+                            <div class="userInfos">
+                                <p class="userId"># {{ user.getId() }}</p>
+                                <div class="column">
+                                    <p class="username">{{ user.getUsername() }}</p>
+                                    <div class="rowRoles">
+                                        {% if user.isAdmin() %}
+                                            <p class="adminRole">admin</p>
+                                        {% endif %}
+                                        {% if user.isVerified() %}
+                                            <p class="verifiedRole">verified</p>
+                                        {% endif %}
+                                            <p class="userRole">user</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="userButtons">
+                                <a href="/admin/user/edit/{{ user.getId() }}" class="editButton" style="background-color: #0094F0;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg></a>
+                                <a href="/admin/user/delete/{{ user.getId() }}" class="deleteButton" style="background-color: #FF4F4F;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg></a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="orderManager">
+                <h1>Commandes</h1>
+                <div class="orderMenu">
+                    <form class="searchBar" action="#" method="get">
+                        <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></button>
+                        <input type="text" name="searchOrder" placeholder="Rechercher un mot clé">
+                    </form>
+                    <div class="orderContainer">
+                    {% for orderNumber in orderNumbers %}
+                        <div class="orderCard">
+                            <p class="orderNumber">Commande n°{{ orderNumber }}</p>
+                            <p class="clientName">Noan</p>
+                            <div class="leftContainer">
+                                <p class="totalCart">23€</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="rowContainer customInput">
+            <div class="productManager">
+                <h1>Ajout produit</h1>
+                <div class="productMenu">
+                    {{ form_start(formCreateProduct,{'attr': {'data-turbo': 'false'}}) }}
+                        <h2>Nom</h2>
+                        {{ form_row(formCreateProduct.productName,{'label': false}) }}
+                        <h2>Description</h2>
+                        {{ form_row(formCreateProduct.description,{'label': false}) }}
+                        <h2>Image</h2>
+                        {{ form_row(formCreateProduct.productImg,{'label': false}) }}
+                        <h2>Collection</h2>
+                        {{ form_row(formCreateProduct.collectionId,{'label': false}) }}
+                        <h2>Modele Infos</h2>
+                        {{ form_row(formCreateProduct.color,{'label': false}) }}
+                        {{ form_row(formCreateProduct.modelName,{'label': false}) }}
+                        {{ form_row(formCreateProduct.labels,{'label': false}) }}
+                        <h2>Prix</h2>
+                        {{ form_row(formCreateProduct.unitPrice,{'label': false}) }}
+                        <h2>Quantite</h2>
+                        {{ form_row(formCreateProduct.quantity, {'label' : false}) }}
+                        <button type="submit">Créer le produit</button>
+                    {{ form_end(formCreateProduct) }}
+                </div>
+            </div>
+            <div class="promoManager">
+                <h1>Promotions</h1>
+                <div class="promoMenu">
+                    <form action="/admin/promocode/create" method="post">
+                        <h2>Code promo</h2>
+                        <input type="text" name="promocode" id="" placeholder="le nom du code promo sans espaces">
+                        <h2>Rabais</h2>
+                        <input type="number" name="percentage" id="" placeholder="le pourcentage de rabais en %">
+                        <button type="submit">Appliquer le rabais</button>
+                    </form>
+                </div>
+            </div>
+            <div class="collecManager">
+                <h1>Collection</h1>
+                <div class="collecMenu">
+                    <form action="/admin" method="post" data-turbo="false">
+                        <h2>Nom</h2>
+                        <input name="createCollection" type="text" placeholder="nom de la collection a créer">
+                        <button type="submit">Ajouter la collection</button>
+                    </form>
+                    <div class="searchContainer">
+                        <form class="searchBar" action="/admin" method="post" data-turbo="false">
+                            <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></button>
+                            <input type="text" name="searchCollec" placeholder="Rechercher un nom de collection">
+                        </form>
+                        <div class="collecContainer">
+                        {% for collection in collections %}
+                            <div class="collecCard">
+                                <div class="infos">
+                                    <p class="collecId">#{{ collection.getId() }}</p>
+                                    <p class="CollecName">{{ collection.getCollectionName() }}</p>
+                                </div>
+                                <div class="userButtons">
+                                    <a href="/admin/collec/delete/{{ collection.getId() }}" class="deleteButton" style="background-color: #FF4F4F;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg></a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

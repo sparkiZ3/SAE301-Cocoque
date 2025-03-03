@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre panier{% endblock %}
+
+{% block stylesheets%}
+<link href="{{ asset('css/cart.css') }}?v={{ 'now'|date('U') }}" rel="stylesheet"/>
+
+{% endblock %}
+
+{% block body %}
+    <h1>Vos articles</h1>
+    {% for message in app.flashes('error') %}
+            <div class="alert alert-error">
+                {{ message }}
+            </div>
+    {% endfor %}
+    <div class="cartContainer">
+        <div class="productList">
+            <form action="{{path('update_cart')}}" method="post">
+                {% for el in cartElements %}
+                <div class="product">
+                        <img src="{{ asset('imgs/products/' ~ el['product']['imageURL']) }}" alt="produit1">
+                        <div class="productInfo">
+                                <h2>{{ el['product']['productName'] }}</h2>
+                        </div>
+                        <div class="productInfo">
+                                <button type="submit" name="decId" value="{{ el['id'] }}">-</button>
+                                <p class="qte">{{ el['quantity'] }}</p>
+                                {% if el['quantity'] >=10 %}
+                                    <button type="submit" name="addId" value="{{ el['id'] }}" disabled>+</button>
+                                {% else %}
+                                    <button type="submit" name="addId" value="{{ el['id'] }}">+</button>
+                                {% endif %}
+                                <div class="remove"><button type="submit" name="delId" value="{{ el['id'] }}" id="remove"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg> </button>
+                            </div>
+                        </div>
+                        <div class="productPrice">
+                                <p>{{ el['product']['unitPrice'] }} €</p>
+                        </div>
+                        <div class="productPrice">
+                                <p>{{ el['product']['unitPrice'] * el['quantity'] }} €</p>
+                        </div>
+                </div>
+                {% endfor %}
+                {% if cartElements|length == 0 %}
+                    <p>Aucun articles dans votre panier</p>
+                {% endif %}
+            </form>
+            {% if cartElements|length > 0 %}
+                <form id="formViderPanier" action="/cart/delete"> 
+                <button class="btn btn-danger" type="submit">vider le panier</button>
+                </form>
+            {% endif %}
+            <div id="confirmationModal" class="modal">
+                <div class="modal-content">
+                    <h2>Confirmation</h2>
+                    <p>Êtes-vous sûr de vouloir vider le panier ?</p>
+                    <div class="modal-actions">
+                        <button id="confirmButton" class="btn btn-danger">Oui, vider le panier</button>
+                        <button id="cancelButton" class="btn btn-secondary">Annuler</button>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <div class="cartPrices">
+            <div class="cartPrice">
+                <p>Articles</p>
+                <p>{{ totalCartPrice }} €</p>
+            </div>
+            <div class="cartPrice">
+                <p>Livraison</p>
+                <p>{{deliveryPrice}} €</p>
+            </div>
+            <div class="cartSeparator"></div>
+            <div class="cartPrice">
+                <p>Total</p>
+                <p>{{ totalCartPrice + deliveryPrice}} €</p>
+            </div>
+            <form action="{{path('app_order')}}">
+                {% if cartElements|length > 0 %}
+                    <button type="submit" class="cartButton">Payer</button>
+                {% else %}
+                    <button type="submit" class="cartButton" disabled>Payer</button>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+     <script>
+        document.getElementById('formViderPanier').addEventListener('submit', function(event) {
+            event.preventDefault();  
+            const modal = document.getElementById('confirmationModal');
+            modal.style.display = 'block';
+            document.getElementById('confirmButton').addEventListener('click', () => {
+                this.submit();  
+            });
+
+            document.getElementById('cancelButton').addEventListener('click', () => {
+                modal.style.display = 'none'; 
+            });
+        });
+    </script>
+
+{% endblock %}

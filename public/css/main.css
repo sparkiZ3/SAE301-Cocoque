@@ -1,0 +1,25 @@
+:root{
+    --bgcolor:#f4f4f4;
+    --primary-color:#fff;
+    --secondary-color:#6399FF;
+    --primary-text-color:#fff;
+    --secondary-text-color:#4A4A4A;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    min-height:100vh;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bgcolor);
+    
+}
+.pageMainContainer{
+    min-height: 90vh;
+    margin: 0;
+    padding: 0;
+}
+
+

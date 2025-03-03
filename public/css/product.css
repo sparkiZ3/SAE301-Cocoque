@@ -1,0 +1,233 @@
+.content{
+    display: flex;
+    flex-direction: row;
+}
+
+.content .return{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.deliveryRow{
+    align-items: center;
+    margin: 15px 0;
+}
+.deliveryRow svg{
+    margin-right: 15px;
+}
+
+.return button{
+    height: 100%;
+    width: 100%;
+    padding: 0 25px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #f4f4f4;
+    background-color: #f4f4f4;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    max-width: 120px;
+}
+.return button svg{
+    height: calc(100% - 15px);
+    fill: #424242;
+}
+
+.content .productImg{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content .productDescription{
+    margin-top: 40px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:left;
+}
+.productImg img{
+    width: 100%;
+    margin-left: 20px;
+    max-width: 700px;
+    margin-top: 20px;
+}
+.productDescription svg{
+    width: 40px;
+    height: 40px;
+    fill: #097DC6;
+}
+.productDescription h1{
+    font-size: 2em;
+    padding-bottom: 1px;
+    margin: 0;
+}
+.productDescription p{
+    font-size: 1.2em;
+    padding-bottom: 1px;
+    margin: 0;
+    color: #6A6A6A;
+}
+.starContainer{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    align-items: center;
+}
+.starContainer svg{
+    fill: #FFD700;
+    width: 20px;
+    height: 20px;
+}
+.starContainer p{
+    font-size: 0.8em;
+    padding-left: 10px;
+    margin: 0;
+    color: #6A6A6A;
+}
+.separator{
+    width: 80%;
+    height: 2px;
+    background-color: #8B8B8B;
+    margin-top: 20px;
+
+}
+.circleCollectionElementContainer{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.circleCollectionElement{
+    margin-top: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #6399FF;
+    border: 1px solid #a09d9d;
+    border-radius: 50%;
+    display: block;
+    margin-right: 5px;
+
+    position: relative
+}
+.popover {
+    display: none;
+    position: absolute;
+    bottom: 100%; /* Positionner le popover juste au-dessus de l'élément */
+    left: 50%; /* Centrer le popover par rapport à l'élément */
+    transform: translateX(-50%); /* Ajuster le décalage pour le centrer */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    white-space: nowrap; /* Empêche le texte de se couper */
+  }
+  
+  .circleCollectionElement:hover + .popover {
+    display: block; /* Afficher le popover au survol */
+  }
+
+label {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+select {
+width: 100%;
+max-width: 300px;
+padding: 10px 15px;
+font-size: 16px;
+font-family: Arial, sans-serif;
+color: #444;
+background-color: #f0f0f0;
+border: 2px solid #a09d9d;
+border-radius: 5px;
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+select:hover {
+border-color: #9c9c9c;
+background-color: #e8e8e8;
+}
+
+optgroup {
+text-decoration: none;
+font-weight: bold;
+color: #555;
+}
+
+option {
+padding: 5px 10px;
+}
+.price{
+    font-size: 1.5em !important;
+    color: #3F3F3F !important;
+    margin: 20px 0 !important;
+    font-weight: bold;
+}
+
+.addToCart{
+    background-color: #6399FF;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    width: fit-content;
+    font-size: 1.2em;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 20px;
+    width: 100%;
+}
+
+form input[type="number"]{
+    width: 50%;
+    max-width: 100px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #444;
+    background-color: #f0f0f0;
+    border: 2px solid #a09d9d;
+    border-radius: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.infoProdAlert{
+    margin-top: 10px;
+    background-color: #ffc2c2;
+    color: #750000;
+    border: 1px solid #750000;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.infoProdAlert p {
+    color: #750000;
+    font-size: 0.9rem;
+}

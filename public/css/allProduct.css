@@ -1,0 +1,360 @@
+.collectionContainer{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    color: #3F3F3F;
+}
+
+.leftMenuContainer{
+    width: 30%;
+}
+.lefMenu{
+    background-color: #fff;
+    padding: 20px;
+    margin: 0 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.lefMenu h2{
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.lefMenu p{
+    margin: 0;
+}
+.lefMenu .allSortButtons{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.currentSort button svg{
+    fill: #fff;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+}
+.lefMenu .allSortButtons .sortButton svg{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    fill: #3F3F3F;  
+}
+.lefMenu .allSortButtons button{
+    text-decoration: none;
+    color:black;
+    background-color: #F8F8F8;
+    
+}
+.lefMenu .allSortButtons .sortButton{
+    background-color: #F8F8F8;
+    border: 1px solid #D7D7D7;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.lefMenu input[type="number"]{
+    background-color: #F8F8F8;
+    border: 1px solid #D7D7D7;
+    margin-right: 10px;
+    padding: 5px;
+}
+.currentSort button[type="submit"]{
+    background-color: #6399FF;
+    border: 1px solid #6399FF;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.currentSort a svg{
+    fill: #fff;
+}
+
+.validateButton button{
+    text-decoration: none;
+    color:black;
+    background-color: #F8F8F8;
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    border-radius: 7px;
+    
+}
+
+.IntervalePrice{
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    border: none;
+    color: #fff;
+    padding: 8px 0px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Price{
+    width: 72%;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    padding: 8px 0px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+label {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+select {
+width: 100%;
+max-width: 300px;
+padding: 10px 15px;
+font-size: 16px;
+font-family: Arial, sans-serif;
+color: #444;
+background-color: #f0f0f0;
+border: 2px solid #a09d9d;
+border-radius: 5px;
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+select:hover {
+border-color: #9c9c9c;
+background-color: #e8e8e8;  
+}
+
+optgroup {
+text-decoration: none;
+font-weight: bold;
+color: #555;
+}
+
+option {
+padding: 5px 10px;
+}
+
+.searchBar{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+}
+
+.buttons form{
+    margin-top: 10px;
+}
+form button{
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #D7D7D7;
+    background-color: #fff;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+}
+.left button{
+    border-radius: 5px 0 0 5px;
+}
+.rightbutton button{
+    border-radius: 0 5px 5px 0;
+}
+
+.rightbutton button svg{
+    height: calc(100% - 15px);
+    fill: #424242;
+}
+.leftbutton button svg{
+    height: calc(100% - 15px);
+    fill: #424242;
+}
+
+
+.searchBar input[type=text]{
+    height: 45%;
+    border-radius: 0;
+    border: 1px solid #D7D7D7;
+    padding: 10px;
+    margin: 0;
+    width: 90%;
+
+    box-sizing: unset;
+}
+
+.rightContentContainer{
+    width: 70%;
+    padding-right:20px;
+    margin: 0 20px;
+}
+.rightContentContainer p {
+    margin: 0;
+    font-size: 0.7rem;
+    margin-top: 10px;
+}
+
+.cardContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 20px;
+    padding-left: 0;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.phoneCard{
+    min-width: 350px;
+    border-radius: 10px;
+    width: 20%;
+    background-color: #F8F8F8;
+    padding: 20px;
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-sizing: unset;
+}
+.phoneCard .comment{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    top: 0;
+    left: 0 ;
+    padding: 5px;
+    background-color: #F95B5B   ;
+    border-radius: 10px 0 5px 0 ;
+    color: #fff;
+}
+.phoneCard p{
+    color: #999999;
+}
+.comment p {
+    padding: 0;
+    margin: 0;
+    border-radius: 0 0 5px 0 ;
+    color: #fff;
+    font-weight: bold;
+    margin: 3px;
+}
+.comment svg{
+    margin:  0 7px;
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+}
+.phoneCard h2{
+    margin: 0;
+    font-weight: bold;
+}
+.phoneCard p{
+    margin: 0;
+}
+.phoneCard img{
+    margin: 20px 0;
+    width: 100%;
+}
+.phoneCard .buttons{
+    display: flex;
+    flex-direction: row;
+}
+.phoneCard .buttons button{
+    font-weight: bold;
+}
+.phoneCard button svg{
+    fill: #fff;
+    width: 20px;
+    height: 20px;
+}
+.phoneCard .buttons .seeProd{
+    width: 100%;
+    margin-right: 10px;
+
+}
+
+.phoneCard button{
+    background-color: var(--secondary-color);
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+.phoneCard a{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 10px;
+    background-color: var(--secondary-color);
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+.phoneCard :nth-child(1){
+    color: #fff;
+}
+
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination span{
+    background-color: #fff;
+    border: 2px solid #d7d7d7;
+    border-radius:5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+}
+.pagination .current{
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: 2px solid var(--secondary-color);
+}
+.pagination span a{
+    text-decoration: none;
+    color: #000;
+    width: 100%;
+    height: 100%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .lefMenu .allSortButtons {
+        flex-direction: column;
+    }
+    .lefMenu input[type="number"] {
+        margin-bottom: 10px;
+      }
+}

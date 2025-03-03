@@ -1,0 +1,133 @@
+.promocode{
+    width: 100%;
+    background-color: #FF6363;
+    display: flex;
+    justify-content: center;
+}
+.promocode p{
+    margin: 0;
+    padding: 5px;
+    color: #fff;
+}
+header{
+    box-sizing: unset;
+    position: relative;
+    padding: 5px 20px;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    background-color: #000;
+    align-items: center;
+    justify-content: space-between;
+}
+header .logoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+}
+header .logoContainer a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+}
+header .logoContainer p {
+    text-decoration: none;
+    margin: 0;
+}
+.logoContainer p span {
+    text-decoration: none;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+header .logoContainer img {
+    height: 60%;
+    margin-right: 20px;
+}
+header .svgContainer{
+    display: flex;
+    flex-direction:row ;
+}
+header .svgContainer svg{
+    fill: #fff;
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.navbar a{
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar a:hover{
+    transition: 0.5s;
+    color: #d3d3d3;
+}
+
+.headerCartContainer{
+    position: relative;
+    width: fit-content;
+}
+.headerCartContainer svg{
+    z-index: 99;
+}
+
+.headerCartContainer p{
+    box-sizing:border-box;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #6399FF;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 0;
+    font-size: 1rem;
+}
+
+
+.dropdownAppareils {
+    display: inline-block;
+}
+  
+.dropdownAppareils-content {
+    z-index: -1;
+    width: 100%;
+    padding-top: 20px;
+    left: 0;
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    background-color: #272727;
+    transition: transform 1s ease-in-out, visibility 1s;
+    transform: translateY(-200%);
+}
+  
+.dropdownAppareils:hover .dropdownAppareils-content{
+    visibility: visible;
+    transform: translateY(0);
+}
+    

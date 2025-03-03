@@ -1,0 +1,214 @@
+:root{
+    --bs-body-bg:#f4f4f4;
+    --secondary-color:#6399FF;
+}
+
+.accountHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2%;
+    border-bottom: 1px solid #c6c8ce;
+}
+.accountHeader a{
+    background-color: var(--secondary-color);
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+    border: 2px solid #558ffc;
+    border-radius: 30px;
+    color: #fff;
+}
+.mainRowContainerAccount{
+    display: flex;
+    flex-direction: row;
+}
+.leftContainer{
+    width: 30%;
+    padding: 2%;
+    padding-left: 4%;
+    min-width: 320px;
+}
+.leftContainer .imgContainer{
+    width: 120px;
+    height: 120px;
+    background-color: #c6c8ce;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 50%;
+}
+.imgContainer svg{
+    width: 80%;
+    padding: 20px;
+    fill: #fff;
+}
+.leftContainer h1{
+    font-size: 1.5rem;
+    margin-bottom: 0px;
+}
+p{
+    color:#000;
+
+}
+
+.leftContainer p{
+    margin-top: 0px;
+    font-size: 1rem;
+    color: #6c757d;
+}
+.leftContainer ul{
+    margin-top: 50px;
+    list-style-type: none;
+    padding: 0;
+}
+.leftContainer ul li {
+    margin: 15px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.leftContainer ul li.active a {
+    color: var(--secondary-color);
+    font-weight: 999;
+}
+ul li a{
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+
+.rightContainer{
+    width: 60%;
+}
+
+.infoContainer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    box-sizing: unset;
+}
+
+.persoCard{
+    width: 25%;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 20px;
+    padding: 10px 25px;
+    border-radius: 10px;
+    min-width: 165px;
+    box-sizing: unset;
+}
+.persoCard .title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+}
+.persoCard p{
+    color: #6c757d;
+    margin: 10px;
+}   
+.persoCard input{
+    color: #6c757d;
+    margin: 10px;
+    border:none;
+    font-size: 1rem;
+    width: 90%;
+    border-bottom: 1px solid #6c757d;
+}   
+.title p {
+    color: #000;
+}
+.title svg {
+    height: 20px;
+    fill: var(--secondary-color);
+}
+
+
+
+.deliveryHistory {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 20px 0px;
+}
+
+.pageMainContainer h1 {
+    color: #333;
+    line-height: 1.5;  
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.commande {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.commande:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.commande-info {
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.commande-info h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.commande-info p {
+    margin: 5px 0 0;
+    color: #777;
+}
+
+.btn-action {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn-action:hover{
+    background-color: #5186e7;
+}
+.mainRowContainerAccount form button{
+    background-color: #6399FF;
+    color: #fff;
+    padding: 10px;
+    border: none;
+}
+
+.modifButton{
+    position:fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #6399FF;
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+    border-radius: 50%;
+    fill: #fff;
+}

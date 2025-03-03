@@ -1,0 +1,163 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande{% endblock %}
+
+
+{% block stylesheets %} <link rel="stylesheet" href="{{ asset('css/order.css') }}"> {% endblock %}
+
+{% block body %}
+<div class="contentContainer">
+    <div class="infosContainer">
+        <div class="rowOpposite">
+            <h1>1. Informations du compte</h1>
+            <a href="/account">Modifier</a>
+        </div>
+        <p>E-mail : {{ user.getEmail() }}</p>
+        <p>Nom : {{ user.getLastName() }}</p>
+        <p>Prénom : {{ user.getFirstName() }}</p>
+        <div class="rowOpposite">
+            <h1>2. Adresse de facturation</h1>
+            <a href="/order/goToStep/2">Modifier</a>
+        </div>
+        {% if deliveryPageStep == 2 %}
+        <h2>Choissisez une addresse déja existante</h2>
+            <form action="/order/createAdressOrNextStep/facturation" method="post" data-turbo="false">
+                <select class="customInput" id="selectedAdress" name="selectedAdress">
+                    {% for adress in adresses %}
+                        <option value="{{ adress.getId() }}">{{ adress.getStreetAdress() }}</option>
+                    {% endfor %}
+                </select>
+                <input type="hidden" name="type" value"facturation" > 
+                {% if adresses|length >0 %}
+                    <button type="submit">Choisir cette adresse</button>
+                {% else %}
+                    <button type="submit" disabled>Choisir cette adresse</button>
+                {% endif %}
+            </form>
+            <h2>OU créer une nouvelle adresse :</h2>
+            <div class="adressFormContainer">
+            {{ form_start(addrFormFacturation, {'attr': {'data-turbo': 'false'}}) }}
+                <h1>Pays</h1>
+                {{ form_row(addrFormFacturation.country, {'label': false}) }}
+                <h1>Adresse</h1>
+                {{ form_row(addrFormFacturation.streetAdress , {'label': false}) }}
+                <h1>Ville</h1>
+                <div class="rowInput">
+                    {{ form_row(addrFormFacturation.zipcode , {'label': false}) }}
+                    {{ form_row(addrFormFacturation.city , {'label': false}) }}
+                </div>
+                <h1>Informations complémentaires</h1>
+                <div class="rowInput">
+                    {{ form_row(addrFormFacturation.numBatiment , {'label': false}) }}
+                    {{ form_row(addrFormFacturation.appartementNumber , {'label': false}) }}
+                </div>
+                <button type="submit">Créer l'adresse</button>
+                {{ form_end(addrFormFacturation) }}
+            </div>
+        {% endif %}
+        <div class="rowOpposite">
+            <h1>3. Adresse de livraison</h1>
+            {% if deliveryPageStep >= 3 %}
+                <a href="/order/goToStep/2">Modifier</a>
+            {% endif %}
+        </div>
+        {% if deliveryPageStep == 3 %}
+
+        <h2>Choissisez une addresse déja existante</h2>
+        <form action="/order/createAdressOrNextStep/livraison" method="post" data-turbo="false">
+            <select class="customInput" id="selectedAdress" name="selectedAdress">
+                {% for adress in adresses %}
+                    <option value="{{ adress.getId() }}">{{ adress.getStreetAdress() }}</option>
+                {% endfor %}
+            </select>
+            <input type="hidden" name="type" value"livraison">
+            {% if adresses|length >0 %}
+                <button type="submit">Choisir cette adresse</button>
+            {% else %}
+                <button type="submit" disabled>Choisir cette adresse</button>
+            {% endif %}
+        </form>
+            <h2>OU créer un nouvelle adresse :</h2>
+            <div class="adressFormContainer">
+                {{ form_start(addrFormLivraison, {'attr': {'data-turbo': 'false'}}) }}
+                <h1>Pays</h1>
+                {{ form_row(addrFormLivraison.country, {'label': false}) }}
+                <h1>Adresse</h1>
+                {{ form_row(addrFormLivraison.streetAdress , {'label': false}) }}
+                <h1>Ville</h1>
+                <div class="rowInput">
+                    {{ form_row(addrFormLivraison.zipcode , {'label': false}) }}
+                    {{ form_row(addrFormLivraison.city , {'label': false}) }}
+                </div>
+                <h1>Informations complémentaires</h1>
+                <div class="rowInput">
+                    {{ form_row(addrFormLivraison.numBatiment , {'label': false}) }}
+                    {{ form_row(addrFormLivraison.appartementNumber , {'label': false}) }}
+                </div>
+                <button type="submit">Créer l'adresse</button>
+                {{ form_end(addrFormLivraison) }}
+            </div>
+
+            
+        {% endif %}
+        <h1>4. Paiement</h1>
+
+        {% if deliveryPageStep == 4 %}
+        <form action="/payment/process" method="post" data-turbo="false" >
+            <div class="rowOpposite DeliveryCardChoice">
+                <div class="rowDelivery">
+                    <input type="checkbox" id="delivery1" name="delivery" value="fast" />
+                    <p>Livraison Rapide (2-3 jours ouvrés)</p>
+                </div>
+                <div class="price"><p>10€</p></div>
+            </div>
+            <div class="paymentMethodCardChoice">
+                <input type="radio" id="paymentMethod1" name="paymentMethod" value="paypal" required />
+                <img src={{ asset('imgs/paypal.png') }} alt="">
+            </div>
+            <div class="paymentMethodCardChoice">
+                <input type="radio" id="paymentMethod2" name="paymentMethod" value="card" required />
+                <img src={{ asset('imgs/mastercard.png') }} alt="">
+                <img src={{ asset('imgs/visa.png') }} alt="">
+            </div>
+            <button type="submit">Passer au paiement</button>
+        </form>
+        {% endif %}
+    </div>
+    <div class="orderSummary">
+        <h1>Votre Commande</h1>
+        <div class="orderContainer">
+        {% for el in cartElements %}
+            <div class="orderCard rowOpposite">
+                <div class="left">
+                    <img src="{{ asset('imgs/products/' ~ el['product']['imageURL']) }}" alt="">
+                    <div class="productInfo">
+                        <h2>{{ el['product']['productName'] }}</h2>
+                        <p>Samsung s23</p>
+                    </div>
+                </div>
+                <p class="price">{{ el['quantity'] }} x {{ el['product']['unitPrice'] }}€</p>
+            </div>
+        {% endfor %}
+        </div>
+        <div class="totalPriceContainer">
+            <div class="rowOpposite">
+                <p>Produits</p>
+                <p>{{ totalCartPrice }} €</p>
+            </div>
+            <div class="rowOpposite">
+                <p>Livraison</p>
+                <p>{{deliveryPrice}} €</p>
+            </div>
+            <div class="separatorPrice"></div>
+            <div class="rowOpposite">
+                <p>Total</p>
+                <p>{{ totalCartPrice + deliveryPrice }} €</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+{% endblock %}

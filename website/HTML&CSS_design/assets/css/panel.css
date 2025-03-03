@@ -1,0 +1,306 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.contentContainer{
+    padding: 20px 2%;
+}
+.fullWidthContainer{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 100%;
+    background-color:#fff;
+    border-radius: 7px;
+}
+ .searchBar{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    margin-bottom: 10px;
+}
+ .searchBar button{
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #D2D2D2;
+    background-color: #F8F8F8;
+    border-radius: 5px 0 0 5px;
+    margin: 0;
+}
+
+ .searchBar button svg{
+    height: calc(100% - 15px); 
+    fill: #424242;
+}
+ .searchBar input[type=text]{
+    height: 45%;
+    border-radius: 0;
+    border: 1px solid #D2D2D2;
+    background-color: #F8F8F8;
+    padding: 10px;
+    margin: 0;
+    border-radius: 0 5px 5px 0;
+    width: 100%;
+}
+.row{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.fullWidthContainer .row .infoContainer{
+    width: 30%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+.fullWidthContainer .row .infoContainer p{
+    font-size: 1.3rem;
+}
+.fullWidthContainer .row .infoContainer h2{
+    margin-top: 0;
+    font-size: 2rem;
+}
+.rowContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.userManager{
+    width: 30%;
+    margin-right: 20px;
+}
+.userMenu{
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    max-height: 500px;
+}
+
+.userContainer{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.userCard{
+    border: 1px solid #D2D2D2;
+    margin-top: 15px;
+    background-color: #F8F8F8;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+.userCard .userInfos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.userCard .userInfos .userId{
+    color: #CECECE;
+    font-size: 0.95rem;
+    margin-right: 10px;
+}
+.userCard .userInfos .username{
+    color: #525252;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.userCard .userButtons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.userButtons svg{
+    width: 25px;
+    height:25px;
+    fill: #fff;
+}
+.userButtons a{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.orderManager{
+    width: 70%;
+}
+.orderMenu{
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    max-height: 500px;
+}
+.orderContainer{
+
+    overflow-y: scroll;
+}
+.orderCard{
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #D2D2D2;
+    background-color: #F8F8F8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.orderCard .leftContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.orderCard .leftContainer svg{
+    width: 30px;
+    height: 30px;
+    fill: #848484;
+    margin-left: 10px;
+}
+.productManager{
+    width: 33%;
+}
+.productMenu{
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.productMenu h2{
+    margin-bottom: 0;
+}
+.customInput input{
+    width: calc(100% - 20px);
+    background-color: #F8F8F8;
+    border: 1px solid #D2D2D2;
+    padding: 10px;
+    border-radius: 5px;
+}
+.customInput textarea{
+    width: calc(100% - 20px);
+    background-color: #F8F8F8;
+    border: 1px solid #D2D2D2;
+    padding: 10px;
+    border-radius: 5px;
+    height: 60px;
+}
+.customInput button[type="submit"]{
+    margin-top: 20px;
+    width: 100%;
+    background-color: #6399FF;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.promoManager{
+    width: 33%;
+    margin-left: 10px;
+    margin: 0 20px;
+}
+
+.promoMenu{
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.collecManager{
+    width: 33%;
+}
+.collecMenu{
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.searchContainer{
+    margin-top: 20px;
+    background-color: #F8F8F8;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+.collecMenu .searchBar{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    margin-bottom: 10px;
+}
+.collecMenu .searchBar button{
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #D2D2D2;
+    background-color: #F8F8F8;
+    border-radius: 5px 0 0 5px;
+    margin: 0;
+}
+
+.collecMenu .searchBar button svg{
+    height: 100%; 
+    fill: #424242;
+}
+.collecMenu .searchBar input[type=text]{
+    height: 45%;
+    border-radius: 0;
+    border: 1px solid #D2D2D2;
+    background-color: #fff;
+    padding: 10px;
+    margin: 0;
+    border-radius: 0 5px 5px 0;
+    width: 100%;
+}
+.collecContainer{
+    max-height: 300px;
+    overflow-y: scroll;
+}
+.collecCard{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 1px solid #D2D2D2;
+}
+.collecCard .infos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.collecCard .infos .collecId{
+    color: #424242;
+    font-size: 0.9rem;
+}
+.collecCard .infos .CollecName{
+    color: #000;
+    font-size: 1.2rem;
+    margin-left: 10px;
+}

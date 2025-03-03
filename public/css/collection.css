@@ -1,0 +1,139 @@
+.collectionContainerLogos{
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    margin-top: 0;
+    color: #3F3F3F;
+    justify-content: center;
+
+}
+
+.top{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    margin: 40px 0 30px 0;
+    box-sizing: unset;
+
+}
+
+.top h1{
+    margin: 0;
+}
+
+.collectCardContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.collectionCard{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    min-width: 350px;
+    border-radius: 10px;
+    width: 20%;
+    background-color: #F8F8F8;
+    padding: 20px;
+    position: relative;
+    margin: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-sizing: unset;
+}
+.collectionCard img{
+    margin: 20px 0;
+    width: 100%;
+}
+.collectionCard .buttons{
+    display: flex;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    border: none;
+    justify-content: center;
+    color: #fff;
+    padding: 14px 0px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+.collectionCard a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.collectionCard voirtout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30%;
+    margin-inline: 5px;
+    margin-bottom: 30%;
+}
+
+.collectionCard point{
+    background-color: rgb(253, 253, 253);
+    border: solid 5px rgb(0, 0, 0);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: 0.5s;
+    box-shadow:none;
+}
+
+.collectionCard point:hover{
+    transition: 0.5s;
+    background-color: #fff;
+    border: 5px solid rgba(99, 153, 255, 1);
+    box-shadow: rgba(99, 153, 255, 0.8) -5px 5px, rgba(99, 153, 255,0.6) -10px 10px, rgba(99, 153, 255, 0.4) -15px 15px, rgba(99, 153, 255, 0.2) -20px 20px, rgba(99, 153, 255, 0.1) -25px 25px;
+}
+.collectionCard point:hover svg{
+    transition: 0.5s;
+    fill: rgba(99, 153, 255, 1);
+}
+
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination span{
+    background-color: #fff;
+    border: 2px solid #d7d7d7;
+    border-radius:5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+}
+.pagination .current{
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: 2px solid var(--secondary-color);
+}
+.pagination span a{
+    text-decoration: none;
+    color: #000;
+    width: 100%;
+    height: 100%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

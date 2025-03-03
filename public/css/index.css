@@ -1,0 +1,329 @@
+:root{
+    --bs-body-bg:#f4f4f4;
+    --primary-color:#fff;
+    --secondary-color:#6399FF;
+    --primary-text-color:#fff;
+    --secondary-text-color:#4A4A4A;
+
+    /*for the icon carrousel*/
+    --marquee-width: 100vw;
+    --marquee-height: 10vh;
+    /* --marquee-elements: 12; */ /* defined with JavaScript */
+    --marquee-elements-displayed: 8;
+    --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
+    --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+}
+/*
+body{
+    background-color: var(--bgcolor);
+}
+*/
+
+.mainContent{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.marquee {
+    width: var(--marquee-width);
+    height: var(--marquee-height);
+    min-height: 100px;
+    overflow: hidden;
+    color: #eee;
+    position: relative;
+    margin: 70px 0;
+  }
+  .marquee:before, .marquee:after {
+    position: absolute;
+    top: 0;
+    width: 10rem;
+    height: 100%;
+    content: "";
+    z-index: 1;
+  }
+  .marquee-content {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    animation: scrolling var(--marquee-animation-duration) linear infinite;
+  }
+  /* .marquee-content:hover {
+    animation-play-state: paused;
+  } */
+  @keyframes scrolling {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements))); }
+  }
+  .marquee-content li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    flex-shrink: 0;
+    width: var(--marquee-element-width);
+    max-height: 100%;
+    font-size: calc(var(--marquee-height)*3/4); /* 5rem; */
+    white-space: nowrap;
+  }
+  .marquee-content .logoCarrouselCoontainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+
+  }
+  
+  .marquee-content li svg {
+    padding: 15px;
+    height: 100%;
+  }
+  .marquee-content li img {
+    padding: 15px;
+    height: 100%;
+  }
+  
+  @media (max-width: 600px) {
+    html { font-size: 12px; }
+    :root {
+      --marquee-width: 100vw;
+      --marquee-height: 16vh;
+      --marquee-elements-displayed: 3;
+    }
+    .marquee:before, .marquee:after { width: 5rem; }
+  }
+
+.elementContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    margin-top: 30px;
+}
+.offers{
+    background-color: #fff;
+    width: 95%;
+    border-radius: 5px; 
+    padding: 1%;
+}
+
+.indexCardContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.phoneCardIndex{
+    border-radius: 10px;
+    min-width: 300px;
+    width: 20%;
+    background-color: #F8F8F8;
+    padding: 20px;
+    position: relative;
+    margin-top: 20px;
+}
+.phoneCardIndex .comment{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    top: 0;
+    left: 0 ;
+    padding: 5px;
+    background-color: #F95B5B   ;
+    border-radius: 10px 0 5px 0 ;
+    color: #fff;
+}
+.phoneCardIndex p{
+    color: #999999;
+}
+.comment p {
+    padding: 0;
+    margin: 0;
+    border-radius: 0 0 5px 0 ;
+    color: #fff;
+    font-weight: 500;
+    margin: 3px;
+}
+.comment svg{
+    margin:  0 7px;
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+}
+
+.phoneCardIndex img{
+    margin: 30px 0;
+    width: 100%;
+}
+
+.phoneCardIndex a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.phoneCardIndex h2{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.phoneCardIndex :nth-child(1){
+    color: #fff;
+}
+.qualities{
+    margin-top: 5%;
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    justify-content: space-evenly;
+
+}
+.qualities .quality{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--primary-color);
+}
+.quality svg{
+    margin-bottom: 15px;
+    fill: var(--primary-color);
+    height: 100px;
+}
+
+.productsPros{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.productPro{
+    margin: 5%;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--primary-color);
+    max-height: 500px;
+}
+.productPro .textContainer{
+    padding: 30px;
+    width: 60%;
+}
+.textContainer h1{
+    color: #000;
+    font-weight: 900;
+    font-size: 3rem;
+}
+.textContainer p {
+    font-size: 1.5rem;
+    color: var(--secondary-text-color);
+}
+.productPro .imgcontainer{
+    overflow: hidden;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imgcontainer img{
+    height: 100%;
+}
+
+.sloganContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+.sloganContainer p{
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    font-size: 3rem;
+    color: var(--primary-text-color);
+    margin-bottom: 80px;
+    font-weight: 600;
+}
+
+
+@media screen and (min-width: 900px) and (max-width: 1100px) {
+    .productPro .textContainer {
+        padding: 30px;
+        width: 78%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    :root{
+        --marquee-elements-displayed: 5;
+    }
+
+
+    .productPro{
+        flex-direction: column;
+        width: 90%;
+        align-items: center;
+        max-height: none;
+    }
+    .productPro .textContainer{
+        width: 100%;
+    }
+    .productsPros{
+        display:flex;
+        flex-wrap: wrap;
+        max-width: 100%;  
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        padding: 20px;
+    }
+    .productPro .imgcontainer{
+        width: 90%;
+        margin: 20px 0;
+    }
+    header .logoContainer p {
+        display: none;
+    }
+    header .logoContainer img {
+        margin-right: 0;
+      }
+
+      
+}
+
+@media (max-width: 940px) {
+    :root {
+      --marquee-width: 100vw;
+      --marquee-height: 16vh;
+      --marquee-elements-displayed: 3;
+    }
+}
+
+
+@media (max-width: 400px) {
+    :root {
+      --marquee-width: 100vw;
+      --marquee-height: 16vh;
+      --marquee-elements-displayed: 3;
+    }
+}

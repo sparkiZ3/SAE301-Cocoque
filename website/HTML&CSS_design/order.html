@@ -1,0 +1,229 @@
+<link rel="stylesheet" href="assets/css/order.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Roboto">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order</title>
+</head>
+<body>
+    <div class="contentContainer">
+        <div class="infosContainer">
+            <div class="rowOpposite">
+                <h1>1. Informations du compte</h1>
+                <a href="/account">Modifier</a>
+            </div>
+            <p>E-mail : noan@cocoque.fr</p>
+            <p>Nom : LISSILLOUR</p>
+            <p>Prénom : Noan</p>
+            <h1>2. Adresse de facturation</h1>
+            <h2>Choissisez une addresse déja existante</h2>
+            <form action="/adress/create" method="post">
+                <select class="customInput" id="adressFacturation" name="adressFacturation">
+                  <option value="1">--</option>
+                  <option value="1">2 rue des cramptés</option>
+                  <option value="6">3 avenue des champs</option>
+                </select>
+                <h2>OU créer un nouvelle adresse :</h2>
+                <div class="adressFormContainer">
+                    <h1>Pays</h1>
+                    <input class="reversedColor" type="text" name="country" id="country" placeholder="Pays de résidence">
+                    <h1>Adresse</h1>
+                    <input class="reversedColor" type="text" name="adress" id="address" placeholder="Votre adresse postale">
+                    <h1>Ville</h1>
+                    <div class="rowInput">
+                        <input class="reversedColor" type="text" name="zipcode" id="zipcode" placeholder="Code postal">
+                        <select class="customInput reversedColor" id="city" name="city">
+                            <option value="Nantes">Veuillez renseigner un code postal</option>
+                          </select>
+                    </div>
+                    <h1>Informations complémentaires</h1>
+                    <div class="rowInput">
+                        <input class="reversedColor" type="text" name="batNumber" id="batNumber" placeholder="num batiment">
+                        <input class="reversedColor" type="text" name="appartNumber" id="appartNumber" placeholder="num appartement">
+                    </div>
+                    <button type="submit">Créer l'adresse</button>
+                </div>
+
+              </form>
+            <h1>3. Adresse de livraison</h1>
+
+            <h2>Choissisez une addresse déja existante</h2>
+            <form action="/adress/create" method="post">
+                <select class="customInput" id="adressFacturation" name="adressFacturation">
+                  <option value="1">--</option>
+                  <option value="1">2 rue des cramptés</option>
+                  <option value="6">3 avenue des champs</option>
+                </select>
+                <h2>OU créer un nouvelle adresse :</h2>
+                <div class="adressFormContainer">
+                    <h1>Pays</h1>
+                    <input class="reversedColor" type="text" name="country" id="country" placeholder="Pays de résidence">
+                    <h1>Adresse</h1>
+                    <input class="reversedColor" type="text" name="adress" id="address" placeholder="Votre adresse postale">
+                    <h1>Ville</h1>
+                    <div class="rowInput">
+                        <input class="reversedColor" type="text" name="zipcode" id="zipcode" placeholder="Code postal">
+                        <select class="customInput reversedColor" id="city" name="city">
+                            <option value="Nantes">Veuillez renseigner un code postal</option>
+                          </select>
+                    </div>
+                    <h1>Informations complémentaires</h1>
+                    <div class="rowInput">
+                        <input class="reversedColor" type="text" name="batNumber" id="batNumber" placeholder="num batiment">
+                        <input class="reversedColor" type="text" name="appartNumber" id="appartNumber" placeholder="num appartement">
+                    </div>
+                    <button type="submit">Créer l'adresse</button>
+                </div>
+              </form>
+              <form action="/action_page.php">
+                <div class="rowOpposite DeliveryCardChoice">
+                    <div class="rowDelivery">
+                        <input type="radio" id="deliveryChoice1" name="delivery" value="classic" />
+                        <p>Livraison standart (14-16 jours ouvrés)</p>
+                    </div>
+                    <div class="price"><p>9€</p></div>
+                </div>
+                <div class="rowOpposite DeliveryCardChoice">
+                    <div class="rowDelivery">
+                        <input type="radio" id="deliveryChoice1" name="delivery" value="classic" />
+                        <p>Livraison Rapide (2-3 jours ouvrés)</p>
+                    </div>
+                    <div class="price"><p>15€</p></div>
+                </div>
+
+                <button type="submit">Valider le choix</button>
+
+              </form>
+              
+            <h1>4. Paiement</h1>
+            <form action="/action_page.php">
+                <div class="paymentMethodCardChoice">
+                    <input type="radio" id="deliveryChoice1" name="delivery" value="classic" />
+                    <img src="assets/paypal.png" alt="">
+                </div>
+                <div class="paymentMethodCardChoice">
+                    <input type="radio" id="deliveryChoice1" name="delivery" value="classic" />
+                    <img src="assets/mastercard.png" alt="">
+                    <img src="assets/visa.png" alt="">
+                </div>
+                <button type="submit">Passer au paiement</button>
+            </form>
+        </div>
+        <div class="orderSummary">
+            <h1>Votre Commande</h1>
+            <div class="orderContainer">
+                <div class="orderCard rowOpposite">
+                    <div class="left">
+                        <img src="assets/imgs/1.webp" alt="">
+                        <div class="productInfo">
+                            <h2>Coque grise</h2>
+                            <p>Samsung s23</p>
+                        </div>
+                    </div>
+                    <p class="price">36€</p>
+                </div>
+                <div class="orderCard rowOpposite">
+                    <div class="left">
+                        <img src="assets/imgs/1.webp" alt="">
+                        <div class="productInfo">
+                            <h2>Coque grise</h2>
+                            <p>Samsung s23</p>
+                        </div>
+                    </div>
+                    <p class="price">36€</p>
+                </div>
+                <div class="orderCard rowOpposite">
+                    <div class="left">
+                        <img src="assets/imgs/1.webp" alt="">
+                        <div class="productInfo">
+                            <h2>Coque grise</h2>
+                            <p>Samsung s23</p>
+                        </div>
+                    </div>
+                    <p class="price">36€</p>
+                </div>
+                <div class="orderCard rowOpposite">
+                    <div class="left">
+                        <img src="assets/imgs/1.webp" alt="">
+                        <div class="productInfo">
+                            <h2>Coque grise</h2>
+                            <p>Samsung s23</p>
+                        </div>
+                    </div>
+                    <p class="price">36€</p>
+                </div>
+                <div class="orderCard rowOpposite">
+                    <div class="left">
+                        <img src="assets/imgs/1.webp" alt="">
+                        <div class="productInfo">
+                            <h2>Coque grise</h2>
+                            <p>Samsung s23</p>
+                        </div>
+                    </div>
+                    <p class="price">36€</p>
+                </div>
+                <div class="orderCard rowOpposite">
+                    <div class="left">
+                        <img src="assets/imgs/1.webp" alt="">
+                        <div class="productInfo">
+                            <h2>Coque grise</h2>
+                            <p>Samsung s23</p>
+                        </div>
+                    </div>
+                    <p class="price">36€</p>
+                </div>
+                <div class="orderCard rowOpposite">
+                    <div class="left">
+                        <img src="assets/imgs/1.webp" alt="">
+                        <div class="productInfo">
+                            <h2>Coque grise</h2>
+                            <p>Samsung s23</p>
+                        </div>
+                    </div>
+                    <p class="price">36€</p>
+                </div>
+                <div class="orderCard rowOpposite">
+                    <div class="left">
+                        <img src="assets/imgs/1.webp" alt="">
+                        <div class="productInfo">
+                            <h2>Coque grise</h2>
+                            <p>Samsung s23</p>
+                        </div>
+                    </div>
+                    <p class="price">36€</p>
+                </div>
+                <div class="orderCard rowOpposite">
+                    <div class="left">
+                        <img src="assets/imgs/1.webp" alt="">
+                        <div class="productInfo">
+                            <h2>Coque grise</h2>
+                            <p>Samsung s23</p>
+                        </div>
+                    </div>
+                    <p class="price">36€</p>
+                </div>
+            </div>
+            <div class="totalPriceContainer">
+                <div class="rowOpposite">
+                    <p>Produits</p>
+                    <p>216€</p>
+                </div>
+                <div class="rowOpposite">
+                    <p>Livraison</p>
+                    <p>0€</p>
+                </div>
+                <div class="separatorPrice"></div>
+                <div class="rowOpposite">
+                    <p>Total</p>
+                    <p>216€</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+

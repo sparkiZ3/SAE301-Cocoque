@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Produits !{% endblock %}
+
+
+{% block stylesheets %} <link rel="stylesheet" href="{{ asset('css/allProduct.css') }}"> {% endblock %}
+
+{% block body %}
+<div class="collectionContainer">
+    <div class="leftMenuContainer">
+        <div class="lefMenu">
+            <h2>Trier</h2>
+            <p>croissant/décroissant</p>
+            <form method="GET" action="{{ path('showAllProducts') }}">
+                <div class="allSortButtons">
+                {% if direction == "asc" %}
+                    <div class="currentSort">
+                {% else %}
+                    <div class="sortButton">
+                {% endif %}
+                        <button type="submit" name="direction" value="asc" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M151.6 469.6C145.5 476.2 137 480 128 480s-17.5-3.8-23.6-10.4l-88-96c-11.9-13-11.1-33.3 2-45.2s33.3-11.1 45.2 2L96 365.7 96 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 301.7 32.4-35.4c11.9-13 32.2-13.9 45.2-2s13.9 32.2 2 45.2l-88 96zM320 32l32 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32s14.3-32 32-32zm0 128l96 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-96 0c-17.7 0-32-14.3-32-32s14.3-32 32-32zm0 128l160 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-160 0c-17.7 0-32-14.3-32-32s14.3-32 32-32zm0 128l224 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-224 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg></button>               
+                    </div>
+                    {% if direction == "desc" %}
+                    <div class="currentSort">
+                    {% else %}
+                        <div class="sortButton">
+                    {% endif %}
+                        <button type="submit" name="direction" value="desc"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M151.6 469.6C145.5 476.2 137 480 128 480s-17.5-3.8-23.6-10.4l-88-96c-11.9-13-11.1-33.3 2-45.2s33.3-11.1 45.2 2L96 365.7 96 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 301.7 32.4-35.4c11.9-13 32.2-13.9 45.2-2s13.9 32.2 2 45.2l-88 96zM320 480c-17.7 0-32-14.3-32-32s14.3-32 32-32l32 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-32 0zm0-128c-17.7 0-32-14.3-32-32s14.3-32 32-32l96 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-96 0zm0-128c-17.7 0-32-14.3-32-32s14.3-32 32-32l160 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-160 0zm0-128c-17.7 0-32-14.3-32-32s14.3-32 32-32l224 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L320 96z"/></svg></a>
+                    </div>
+                </div>
+                <p>Par prix</p>
+            
+                <div class="allSortButtons">
+                    <input type="number" id="priceMin" name="priceMin" class="Price" min="0" max="100"  value="{{ priceMin }}">
+                    <input type="number" id="priceMax" name="priceMax" class="Price" min="0" max="100" value="{{ priceMax }}">
+                    <div class="validateButton"><button type="submit" name="direction" value="asc">Appliquer</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="rightContentContainer">
+        <form class="searchBar" action="/products/search" method="get">
+            <div class="leftbutton"><button type="submit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg></button></div>
+            <input type="text" name="search" placeholder="Rechercher un mot clé" value="{{ research }}">
+            <div class="rightbutton"><button type="cancel" onclick="window.location.href = '/products';"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></button></div>
+        </form>
+        <p>{{ totalResult }} éléments correspondants</p>
+        <div class="cardContainer">
+            {% for product in pagination.items %}
+                <div class="phoneCard">
+                    <div class="comment">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M384 160c-17.7 0-32-14.3-32-32s14.3-32 32-32l160 0c17.7 0 32 14.3 32 32l0 160c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-82.7L342.6 374.6c-12.5 12.5-32.8 12.5-45.3 0L192 269.3 54.6 406.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160c12.5-12.5 32.8-12.5 45.3 0L320 306.7 466.7 160 384 160z"/></svg>
+                        <p>Popular</p>
+                    </div>
+                    <img src="{{ asset('imgs/products/' ~ product.imageURL) }}" alt="">
+                    <h2>{{ product.productName }}</h2>
+                    <p>Compatible avec tous les téléphones</p>
+                    <h2>{{ product.unitPrice }}€</h2>
+                    <div class="buttons">
+                        <a href="/product/{{ product.Id }}">Voir le produit</a>
+                        <form action="{{path('add_cart')}}" method="post">
+                            <input type="hidden" id="quantity" name="quantity" min="1" max="100" value="1">
+                            <input type="hidden" name="productId" value="{{ product.id }}">
+                            <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg></button>                
+                        </form> 
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    <div class="paginationContainer">
+            {{ knp_pagination_render(pagination) }}
+    </div>
+    </div>
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,226 @@
+.contentContainer{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--bs-body-bg);
+}
+
+.infosContainer{
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 70%;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.infosContainer h1{
+    margin-top: 20px;
+}
+
+.orderSummary{
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    width: 30%;
+    height: calc(100vh - 60px);
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.rowDelivery{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.rowDelivery input{
+    width: 19px;
+    margin: 0;
+    margin-right: 10px;
+}
+.DeliveryCardChoice{
+    margin-top: 10px;
+    background-color: #F8F8F8;
+    border: 1px solid #D2D2D2;
+    padding: 15px;
+}
+.paymentMethodCardChoice{
+    justify-content: start;
+    display: flex;
+    flex-direction: row;
+    background-color: #F8F8F8;
+    border: 1px solid #D2D2D2;  
+    padding: 15px;
+    width: fit-content;
+    margin-top: 10px;
+}
+.paymentMethodCardChoice input{
+    width: 19px;
+    margin: 0;
+}
+.paymentMethodCardChoice img{
+    height: 40px;
+    margin:10px 20px;
+}
+.DeliveryCardChoice p{
+    color:#525252;
+}
+.rowOpposite{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+p{
+    color: #999999;
+    margin: 5px;
+}
+a{
+    color: #0094F0;
+    text-decoration: none;
+}
+
+h1{
+    color: #525252;
+    margin: 0;
+}
+h2{
+    color: #525252;
+    margin: 10px;
+    font-size: 1.2rem;
+}
+.adressFormContainer{
+    background-color: #ECECEC;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.adressFormContainer h1{
+    margin-top: 0px;
+}
+
+input{
+    width: calc(100% - 20px);
+    background-color: #F8F8F8;
+    border: 1px solid #D2D2D2;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+textarea{
+    width: calc(100% - 20px);
+    background-color: #F8F8F8;
+    border: 1px solid #D2D2D2;
+    padding: 10px;
+    border-radius: 5px;
+    height: 60px;
+}
+button[type="submit"]{
+    margin-top: 20px;
+    width: 100%;
+    background-color: #6399FF;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+button:disabled{
+    cursor: not-allowed;
+}
+.reversedColor{
+    background-color: #fff;
+}
+
+select{
+    margin-top: 5px;
+    width: 100%;
+    background-color: #F8F8F8;
+    border: 1px solid #D2D2D2;
+    color: #525252;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.rowInput{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.rowInput input{
+    width: 30%;
+    margin-bottom: 0;
+    margin-right: 20px;
+}
+.rowInput .symfonyInput{
+    width: calc(100% - 40px);
+    margin-bottom: 0;
+    margin-right: 20px;
+}
+
+.rowInput select{
+    width: 70%;
+    margin-top: 0;
+}
+
+.orderContainer{
+    display: flex;
+    flex-direction: column;
+    max-height: 80%;
+    overflow-y: scroll;
+}
+.orderContainer .orderCard{
+    padding: 10px;
+    background-color: #F8F8F8;
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.orderContainer .orderCard img{
+    height: 70%;
+}
+.orderContainer .orderCard .productInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.orderContainer .orderCard .productInfo p{
+    justify-content: start;
+    width: 100%;
+    margin: 0;
+}
+.orderCard .left{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    padding-right: 20px;
+    align-items: center;
+}
+.left p {
+    width: 100%;
+}
+.orderCard p{
+    width: 20%;
+    display: flex;
+    justify-content: end;
+}
+
+.orderContainer .orderCard .productInfo h2{
+    margin: 0;
+}
+.totalPriceContainer{
+    margin-top: 20px;
+    height: 15%;
+}
+.totalPriceContainer .rowOpposite p{
+    font-size: 1.2rem;
+    color: #525252;
+}
+.separatorPrice{
+    width: 100%;
+    border: 1px solid #000;
+}
